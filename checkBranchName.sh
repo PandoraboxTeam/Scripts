@@ -43,7 +43,7 @@ echo "\
 | `feature/*`  | 功能分支       | 对应新添加的业务需求或者新特性        |
 | `bugfix/*`   | 常规修复分支   | 正常修复Bug时所使用的分支             |
 | `hotfix/*`   | 紧急修复分支   | 紧急修复Bug时所使用的分支             |
-| `issus/*`    | Bug修复分支    | 修复Issus上的问题, 一般加上Issus ID   |
+| `issue/*`    | Bug修复分支    | 修复Issus上的问题, 一般加上Issus ID   |
 | `jira/*`     | Bug修复分支    | 修复Jira上的问题, 一般加上Jira  ID    |
 | `release/*`  | 发布分支       | 发布版本用的分支                      |
 | `patch/*`    | 补丁          | 补丁                                 |
@@ -60,7 +60,7 @@ exit 1
 }
 
 OUTPUT_FILE='branchname.output'
-[[ $BRANCH_NAME =~ ^(feature|hotfix|bugfix|issus|jira|release|patch)[-/][a-zA-Z0-9] ]] || {
+[[ $BRANCH_NAME =~ ^(feature|hotfix|bugfix|issue|jira|release|patch)[-/][a-zA-Z0-9] ]] || {
   f_errormsg  | tee ${OUTPUT_FILE}
   f_copyright | tee -a ${OUTPUT_FILE}
   exit 1
